@@ -2,6 +2,7 @@ package errors
 
 import (
 	"fmt"
+	"github.com/logrusorgru/aurora"
 	"os"
 )
 
@@ -9,7 +10,7 @@ import (
 // Application with given code
 func FatalWithCode(err string, code int) {
 	if err != "" {
-		fmt.Println(err)
+		fmt.Println(aurora.Red(err))
 		os.Exit(code)
 	}
 }
